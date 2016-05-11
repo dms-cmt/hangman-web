@@ -2,11 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head runat="server">
-	<title>Default</title>
+	<title>Hangman</title>
+	<link href="styles/main.css" rel="stylesheet" type="txt/css" />
+	<script src="scripts/main.js"></script>
 </head>
 <body>
 	<form id="form1" runat="server">
-		<asp:Button id="button1" runat="server" Text="Click me!" OnClick="button1Clicked" />
+		<h1 id="hNaslov" align="center">HANGMAN</h1>
+		<hr />
+		<center>
+		<div id="main" class="main">
+			<br />
+			<asp:Button id="btnNovaIgra" runat="server" Text="Nova Igra" CssClass="mainButton" /> <br /><br />
+			<asp:Button id="btnRekordi" runat="server" Text="Rekordi" CssClass="mainButton" /><br /><br />
+			<asp:Button id="btnOProgramu" runat="server" Text="O Programu" CssClass="mainButton" /><br /><br />
+		</div>
+		</center>
 	</form>
 </body>
 </html>

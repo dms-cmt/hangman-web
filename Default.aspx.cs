@@ -6,10 +6,8 @@ namespace hangmanweb
 {
 	public partial class Default : System.Web.UI.Page
 	{
-		
-		public virtual void button1Clicked (object sender, EventArgs args)
+		protected void Page_Load (object sender, EventArgs e)
 		{
-			button1.Text = "You clicked me";
 		}
 	}
 }
