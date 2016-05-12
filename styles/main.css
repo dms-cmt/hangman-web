@@ -10,6 +10,9 @@
 	color: black;
 	width: 85%;
 	height: 85%;
+	border-radius: 0 0 10px 10px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 
 .divFooter
