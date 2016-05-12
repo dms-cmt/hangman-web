@@ -17,6 +17,6 @@ namespace hangmanweb {
 		
 		protected System.Web.UI.WebControls.Button btnRekordi;
 		
-		protected System.Web.UI.WebControls.Button btnOProgramu;
+		protected System.Web.UI.WebControls.Button btnOIgri;
 	}
 }
