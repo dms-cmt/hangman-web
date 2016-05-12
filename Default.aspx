@@ -13,9 +13,9 @@
 		<center>
 		<div id="main" class="main">
 			<br />
-			<asp:Button id="btnNovaIgra" runat="server" Text="Nova Igra" CssClass="mainButton" /> <br /><br />
-			<asp:Button id="btnRekordi" runat="server" Text="Rekordi" CssClass="mainButton" /><br /><br />
-			<asp:Button id="btnOProgramu" runat="server" Text="O Programu" CssClass="mainButton" /><br /><br />
+			<asp:Button id="btnNovaIgra" runat="server" Text="Nova Igra" PostBackUrl="~/igra.aspx" CssClass="mainButton" /> <br /><br />
+			<asp:Button id="btnRekordi" runat="server" Text="Rekordi" PostBackUrl="~/rekordi.aspx" CssClass="mainButton" /><br /><br />
+			<asp:Button id="btnOProgramu" runat="server" Text="O Programu" PostBackUrl="~/oigri.aspx" CssClass="mainButton" /><br /><br />
 		</div>
 		</center>
 	</form>
