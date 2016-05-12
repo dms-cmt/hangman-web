@@ -15,10 +15,29 @@
 	padding-bottom: 25px;
 }
 
+.divHeader
+{
+	background-color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	overflow: scroll;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
 .divFooter
 {
-	position: absolute;
+	background: rgba(0, 0, 0, 0.75);
+	color: red;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	z-index: 999;
+	overflow: scroll;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
