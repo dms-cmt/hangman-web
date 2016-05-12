@@ -16,6 +16,16 @@
     		<asp:contentplaceholder id="main" runat="server" />
     	</div>
     </center>
+    	
+    <div id="divFooter" class="divFooter">
+		<center>
+			<asp:Label id="copyright">
+				Milos Zivlak <br />
+				Djordje Gluvajic <br />
+				2016
+			</asp:Label>
+		</center>
+    </div>
 </form>
 </div>
 </body>

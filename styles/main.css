@@ -10,3 +10,11 @@
 	width: 85%;
 	height: 85%;
 }
+
+.divFooter
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
