@@ -13,8 +13,6 @@ namespace hangmanweb {
 	
 	public partial class Default {
 		
-		protected System.Web.UI.HtmlControls.HtmlForm form1;
-		
 		protected System.Web.UI.WebControls.Button btnNovaIgra;
 		
 		protected System.Web.UI.WebControls.Button btnRekordi;

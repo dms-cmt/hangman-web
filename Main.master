@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" Inherits="hangmanweb.Main" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+	<title>Hangman</title>
+	<link href="styles/main.css" rel="stylesheet" type="txt/css" />
+	<script src="scripts/main.js"></script>
+</head>
+<body>
+<div id="container">
+<form runat="server">
+	<h1 id="hNaslov" align="center">HANGMAN</h1>
+	<hr />
+	<center>
+		<div id="divMain" class="divMain">
+    		<asp:contentplaceholder id="main" runat="server" />
+    	</div>
+    </center>
+</form>
+</div>
+</body>
+</html>
+

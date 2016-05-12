@@ -4,17 +4,9 @@
 	color: red;
 }
 
-.main
+.divMain
 {
 	background-color: #ffcc99;
 	width: 85%;
 	height: 85%;
-}
-
-.mainButton
-{
-}
-
-.mainButton : hover
-{
 }
