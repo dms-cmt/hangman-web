@@ -67,9 +67,10 @@ namespace HangmanService
 		 * Rekordi
 		 */
 
-		public List<Rekord> PreuzmiRekorde (int? br = null)
+		public List<Rekord> PreuzmiRekorde (int? br = null,
+			ETipSortiranja tipSortiranja = ETipSortiranja.NajboljiUkupno)
 		{
-			return Channel.PreuzmiRekorde ();
+			return Channel.PreuzmiRekorde (br, tipSortiranja);
 		}
 
 		public void SnimiRekord (String ime)
