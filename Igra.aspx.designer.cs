@@ -12,5 +12,9 @@ namespace hangmanweb {
 	
 	
 	public partial class Igra {
+		
+		protected System.Web.UI.WebControls.Label lblGlavna;
+		
+		protected System.Web.UI.WebControls.Panel panelDugmad;
 	}
 }
