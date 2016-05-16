@@ -17,25 +17,6 @@ namespace hangmanweb
 			int? brojRekorda;
 			ETipSortiranja tipSortiranja;
 
-			/*
-			if (!IsPostBack)
-			{
-				string[] tekst = {
-					"Ukupno",
-					"Po vremenu",
-					"Po broju pogresnih slova"
-				};
-				int[] vrednosti = {
-					(int)ETipSortiranja.NajboljiUkupno,
-					(int)ETipSortiranja.NajboljiPoVremenu,
-					(int)ETipSortiranja.NajboljiPoBrojuSlova
-				};
-
-				for (int i = 0; i < tekst.Length; i++)
-					ddlSortiranje.Items.Add (new ListItem (tekst[i], vrednosti[i].ToString ()));
-			}
-			*/
-
 			HangmanClient client = (HangmanClient)Session ["client"];
 			if (client == null)
 			{
