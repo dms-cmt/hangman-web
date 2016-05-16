@@ -13,6 +13,10 @@ namespace hangmanweb {
 	
 	public partial class Rekordi {
 		
+		protected System.Web.UI.WebControls.DropDownList ddlBrojRekorda;
+		
+		protected System.Web.UI.WebControls.DropDownList ddlSortiranje;
+		
 		protected System.Web.UI.WebControls.Repeater repRekordi;
 		
 		protected System.Web.UI.WebControls.Label lblIme;

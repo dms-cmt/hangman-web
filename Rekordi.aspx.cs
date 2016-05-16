@@ -13,18 +13,23 @@ namespace hangmanweb
 	{
 		protected void Page_Load (object sender, EventArgs e)
 		{
-			if (!IsPostBack)
+			int? brojRekorda;
+			ETipSortiranja tipSortiranja;
+
+			HangmanClient client = (HangmanClient)Session ["client"];
+			if (client == null)
 			{
-				HangmanClient client = (HangmanClient)Session ["client"];
-				if (client == null)
-				{
-					Response.Write ("<script>alert(\"Nema konekcije sa servisom!\")</script>");
-					return;
-				}
-				List<Rekord> rekordi = client.PreuzmiRekorde ();
-				repRekordi.DataSource = rekordi;
-				repRekordi.DataBind ();
+				Response.Write ("<script>alert(\"Nema konekcije sa servisom!\")</script>");
+				return;
 			}
+
+			brojRekorda = int.Parse (ddlBrojRekorda.SelectedValue);
+			if (brojRekorda < 1)
+				brojRekorda = null;
+
+			List<Rekord> rekordi = client.PreuzmiRekorde (brojRekorda);
+			repRekordi.DataSource = rekordi;
+			repRekordi.DataBind ();
 		}
 	}
 }
