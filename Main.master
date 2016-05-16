@@ -16,6 +16,7 @@
 	</div>
 	<center>
 		<div id="divMain" class="divMain">
+			<br />
     		<asp:contentplaceholder id="main" runat="server" />
     	</div>
     </center>
