@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using System.Collections.Generic;
 
 using HangmanService;
@@ -16,6 +17,25 @@ namespace hangmanweb
 			int? brojRekorda;
 			ETipSortiranja tipSortiranja;
 
+			/*
+			if (!IsPostBack)
+			{
+				string[] tekst = {
+					"Ukupno",
+					"Po vremenu",
+					"Po broju pogresnih slova"
+				};
+				int[] vrednosti = {
+					(int)ETipSortiranja.NajboljiUkupno,
+					(int)ETipSortiranja.NajboljiPoVremenu,
+					(int)ETipSortiranja.NajboljiPoBrojuSlova
+				};
+
+				for (int i = 0; i < tekst.Length; i++)
+					ddlSortiranje.Items.Add (new ListItem (tekst[i], vrednosti[i].ToString ()));
+			}
+			*/
+
 			HangmanClient client = (HangmanClient)Session ["client"];
 			if (client == null)
 			{
@@ -27,7 +47,9 @@ namespace hangmanweb
 			if (brojRekorda < 1)
 				brojRekorda = null;
 
-			List<Rekord> rekordi = client.PreuzmiRekorde (brojRekorda);
+			tipSortiranja = (ETipSortiranja)Enum.Parse (typeof(ETipSortiranja), ddlSortiranje.SelectedValue);
+
+			List<Rekord> rekordi = client.PreuzmiRekorde (brojRekorda, tipSortiranja);
 			repRekordi.DataSource = rekordi;
 			repRekordi.DataBind ();
 		}
