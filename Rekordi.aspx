@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" Inherits="hangmanweb.Rekordi" MasterPageFile="~/Main.master" %>
 
 <asp:Content ContentPlaceHolderID="main" runat="server">
-	<link href="styles/rekordi.css" rel="stylesheet" type="txt/css" />
+	<link href="styles/rekordi.css" rel="stylesheet" type="text/css" />
 
 	<asp:Label id="lblBrojRekorda">Broj rekorda: </asp:Label>
 	<asp:DropDownList id="ddlBrojRekorda" runat="server" AutoPostBack="true">
