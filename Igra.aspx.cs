@@ -57,7 +57,6 @@ namespace hangmanweb
 				}
 			}
 
-			panelDugmad.Controls.Add (new LiteralControl ("<br />"));
 			for (i = 0 ; i < btnSlovo.Length; i++)
 			{
 				panelDugmad.Controls.Add (btnSlovo [i]);
