@@ -3,16 +3,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using HangmanService;
+
 namespace hangmanweb
 {
 	
 	public partial class Igra : System.Web.UI.Page
 	{
 		private Button[] btnSlovo;
+		private int ukupanBrojSlova;
 
 		protected void Page_Load (object sender, EventArgs e)
 		{
-			int i;
+			int i, j;
+			int[] args;
+			HangmanClient client = (HangmanClient)Session ["client"];
 
 			if (!IsPostBack)
 			{
@@ -28,6 +33,27 @@ namespace hangmanweb
 					btnSlovo [i].ID = i.ToString ();
 					btnSlovo [i].Text = slova [i];
 					//btnSlovo [i].OnClientClick += new EventHandler (SlovoClick);
+				}
+
+				try
+				{
+					args = client.PokreniIgru ();
+					ukupanBrojSlova = args [0];
+					lblGlavna.Text = "";
+
+					// Resavanje praznih mesta
+					for (i = 0, j = 1; i < ukupanBrojSlova; i++)
+					{
+						if (j < args.Length && args[j] == i)
+						{
+							j++;
+							lblGlavna.Text += " ";
+							continue;
+						}
+						lblGlavna.Text += "_";
+					}
+				} catch(Exception ex)
+				{
 				}
 			}
 
