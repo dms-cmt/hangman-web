@@ -19,22 +19,10 @@ namespace hangmanweb
 			int[] args;
 			HangmanClient client = (HangmanClient)Session ["client"];
 
+			PostaviKontrole ();
+
 			if (!IsPostBack)
 			{
-				string[] slova = {
-					"A", "B", "C", "Č", "Ć", "D", "Dž", "Đ", "E", "F",
-					"G", "H", "I", "J", "K", "L", "Lj", "M", "N", "Nj",
-					"O", "P", "R", "S", "Š", "T", "U", "V", "Z", "Ž"
-				};
-				btnSlovo = new Button [slova.Length];
-				for (i = 0; i < btnSlovo.Length; i++)
-				{
-					btnSlovo [i] = new Button ();
-					btnSlovo [i].ID = i.ToString ();
-					btnSlovo [i].Text = slova [i];
-					//btnSlovo [i].OnClientClick += new EventHandler (SlovoClick);
-				}
-
 				try
 				{
 					args = client.PokreniIgru ();
@@ -56,17 +44,29 @@ namespace hangmanweb
 				{
 				}
 			}
-
-			for (i = 0 ; i < btnSlovo.Length; i++)
-			{
-				panelDugmad.Controls.Add (btnSlovo [i]);
-				if ((i + 1) % 10 == 0)
-					panelDugmad.Controls.Add (new LiteralControl ("<br />"));
-			}
 		}
 
 		protected void SlovoClick (object sender, EventArgs e)
 		{
+		}
+
+		private void PostaviKontrole ()
+		{
+			int i;
+
+			string[] slova = {
+				"A", "B", "C", "Č", "Ć", "D", "Dž", "Đ", "E", "F",
+				"G", "H", "I", "J", "K", "L", "Lj", "M", "N", "Nj",
+				"O", "P", "R", "S", "Š", "T", "U", "V", "Z", "Ž"
+			};
+			for (i = 0; i < btnSlovo.Length; i++)
+			{
+				Button btnSlovo = new Button ();
+				btnSlovo.ID = i.ToString ();
+				btnSlovo.Text = slova [i];
+				btnSlovo.Click += SlovoClick;
+				panelDugmad.Controls.Add (btnSlovo);
+			}
 		}
 	}
 }
