@@ -96,6 +96,8 @@ namespace hangmanweb
 				btnSlovo.Text = slova [i];
 				btnSlovo.Click += SlovoClick;
 				panelDugmad.Controls.Add (btnSlovo);
+				if ((i + 1) % 10 == 0)
+					panelDugmad.Controls.Add (new LiteralControl ("<br />"));
 			}
 		}
 	}
