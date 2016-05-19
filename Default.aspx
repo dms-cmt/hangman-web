@@ -6,7 +6,7 @@
 			<div class="cd-container">
 				<h2>Main menu</h2>
 				<p>
-					<asp:HyperLink id="hlNovaIgra" runat="server" NavigateUrl="~/Igra.aspx">NovaIgra</asp:HyperLink>
+					<asp:HyperLink id="hlNovaIgra" runat="server" NavigateUrl="~/Igra.aspx">Nova Igra</asp:HyperLink>
 				</p>
 				<p>
 					<asp:HyperLink id="hlRekordi" runat="server" NavigateUrl="~/Rekordi.aspx">Rekordi</asp:HyperLink>
