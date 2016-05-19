@@ -13,10 +13,8 @@ namespace hangmanweb {
 	
 	public partial class Default {
 		
-		protected System.Web.UI.WebControls.Button btnNovaIgra;
+		protected System.Web.UI.WebControls.HyperLink hlNovaIgra;
 		
-		protected System.Web.UI.WebControls.Button btnRekordi;
-		
-		protected System.Web.UI.WebControls.Button btnOIgri;
+		protected System.Web.UI.WebControls.HyperLink hlRekordi;
 	}
 }

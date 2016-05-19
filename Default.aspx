@@ -6,15 +6,21 @@
 			<div class="cd-container">
 				<h2>Main menu</h2>
 				<p>
-					<asp:Button id="btnNovaIgra" runat="server" Text="Nova Igra" PostBackUrl="~/Igra.aspx" />
+					<asp:HyperLink id="hlNovaIgra" runat="server" NavigateUrl="~/Igra.aspx">NovaIgra</asp:HyperLink>
 				</p>
 				<p>
-					<asp:Button id="btnRekordi" runat="server" Text="Rekordi" PostBackUrl="~/Rekordi.aspx" />
-				</p>
-				<p>
-					<asp:Button id="btnOIgri" runat="server" Text="O Igri" PostBackUrl="~/OIgri.aspx" />
+					<asp:HyperLink id="hlRekordi" runat="server" NavigateUrl="~/Rekordi.aspx">Rekordi</asp:HyperLink>
 				</p>
 			</div> <!-- cd-container -->
+		</section>
+
+		<section class="cd-section cd-placeholder-2">
+			<div class="cd-container">
+				<h2>O igri</h2>
+				<p>
+					Projekat za fondaciju "Centar za mlade talente"
+    			</p>
+			</div>
 		</section>
 
 		<section id="cd-team" class="cd-section">
@@ -40,7 +46,7 @@
 								<div class="cd-img-overlay"><span>O njemu</span></div>
 							</figure>
 								<div class="cd-member-info">
-								Djordje Gluvajic <span>Instruktor</span>
+								Djordje Gluvajic <span>Programer</span>
 							</div> <!-- cd-member-info -->
 						</a>
 					</li>
