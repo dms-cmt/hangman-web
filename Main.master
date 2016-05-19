@@ -1,37 +1,70 @@
-﻿<%@ Master Language="C#" Inherits="hangmanweb.Main" %>
+<%@ Master Language="C#" Inherits="hangmanweb.Main" %>
+
 <!DOCTYPE html>
-<html>
-<head runat="server">
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
 	<title>Hangman</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-	<script src="scripts/main.js"></script>
-	<link href="styles/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="container">
-<form runat="server">
-	<div id="divHeader" class="divHeader">
-		<h1 id="hNaslov" align="center">HANGMAN</h1>
-		<hr />
-	</div>
-	<center>
-		<div id="divMain" class="divMain">
-			<br />
-    		<asp:contentplaceholder id="main" runat="server" />
-    	</div>
-    </center>
-    	
-    <div id="divFooter" class="divFooter">
-		<center>
-			<asp:Label id="copyright">
-				Milos Zivlak <br />
-				Djordje Gluvajic <br />
-				2016
-			</asp:Label>
-		</center>
-    </div>
-</form>
-</div>
+	<main>
+		<header class="cd-section">
+			<div class="cd-container">
+				<h1>HANGMAN</h1>
+			</div> <!-- cd-container -->
+		</header>
+
+		<asp:ContentPlaceHolder id="cphMain" runat="server">
+		</asp:ContentPlaceHolder>
+
+		<div class="cd-overlay"></div>
+	</main>
+
+	<div class="cd-member-bio member-1">
+		<div class="cd-member-bio-pict">
+			<img src="img/member-bio-img-1.jpg" alt="Member Bio image">
+		</div> <!-- cd-member-bio-pict -->
+
+		<div class="cd-bio-content">
+			<h1>Milos Zivlak</h1>
+			<p>Mlad i vredan decko strucan u polju programiranja.</p>
+			<p>Kao sto mozete videti na slici, najvise uziva u cackanju retro racunara umesto da radi domaci iz matematike.</p>
+		</div> <!-- cd-bio-content -->
+	</div> <!-- cd-member-bio -->
+
+	<div class="cd-member-bio member-2">
+		<div class="cd-member-bio-pict">
+			<img src="img/member-bio-img-2.jpg" alt="Member Bio image">
+		</div> <!-- cd-member-bio-pict -->
+
+		<div class="cd-bio-content">
+			<h1>Djordje GLuvajic</h1>
+			<p>Bla bla</p>
+			<p>bla bla</p>
+		</div> <!-- cd-bio-content -->
+	</div> <!-- cd-member-bio -->
+
+	<div class="cd-member-bio member-3">
+		<div class="cd-member-bio-pict">
+			<img src="img/member-bio-img-3.jpg" alt="Member Bio image">
+		</div> <!-- cd-member-bio-pict -->
+
+		<div class="cd-bio-content">
+			<h1>bla</h1>
+			<p>bla bla</p>
+			<p>bla bla bla</p>
+		</div> <!-- cd-bio-content -->
+	</div> <!-- cd-member-bio -->
+	<a href="#0" class="cd-member-bio-close">Close</a> <!-- close the author bio section -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Gem jQuery -->
 </body>
 </html>
-
