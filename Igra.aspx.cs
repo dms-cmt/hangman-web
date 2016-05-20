@@ -52,6 +52,7 @@ namespace hangmanweb
 			char[] chGlavna = lblGlavna.Text.ToCharArray ();
 			List<int> indeksi;
 			HangmanClient client = (HangmanClient)Session ["client"];
+			EStatusIgre status;
 
 			try
 			{
@@ -77,6 +78,25 @@ namespace hangmanweb
 				{
 					lblGlavna.Text += chGlavna [i];
 				}
+			}
+
+			try
+			{
+				status = client.Status ();
+				if (status == EStatusIgre.IGRA_ZAVRSENA_POBEDA)
+				{
+					ClientScript.RegisterStartupScript (GetType (), "prompt", "unosImena()", true);
+				} else if(status == EStatusIgre.IGRA_ZAVRSENA_PORAZ)
+				{
+					lblGlavna.Text = "";
+					char[] resenje = client.Resenje ();
+					foreach (char c in resenje)
+					{
+						lblGlavna.Text += c;
+					}
+				}
+			} catch(Exception ex)
+			{
 			}
 		}
 
