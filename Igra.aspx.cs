@@ -100,6 +100,27 @@ namespace hangmanweb
 					panelDugmad.Controls.Add (new LiteralControl ("<br />"));
 			}
 		}
+
+		private void PrikaziZivot ()
+		{
+			HangmanClient client = (HangmanClient)Session ["client"];
+			Image img;
+			int brojPokusaja;
+
+			try
+			{
+				brojPokusaja = client.BrojPokusaja ();
+			} catch(Exception)
+			{
+				return;
+			}
+
+			for (int i = 0; i < brojPokusaja; i++)
+			{
+				img = (Image)frmIgra.FindControl ("imgZivot" + brojPokusaja.ToString ());
+				img.Visible = true;
+			}
+		}
 	}
 }
 

@@ -13,6 +13,20 @@ namespace hangmanweb {
 	
 	public partial class Igra {
 		
+		protected System.Web.UI.HtmlControls.HtmlForm frmIgra;
+		
+		protected System.Web.UI.WebControls.Image imgZivot1;
+		
+		protected System.Web.UI.WebControls.Image imgZivot3;
+		
+		protected System.Web.UI.WebControls.Image imgZivot2;
+		
+		protected System.Web.UI.WebControls.Image imgZivot4;
+		
+		protected System.Web.UI.WebControls.Image imgZivot5;
+		
+		protected System.Web.UI.WebControls.Image imgZivot6;
+		
 		protected System.Web.UI.WebControls.Label lblGlavna;
 		
 		protected System.Web.UI.WebControls.Panel panelDugmad;
