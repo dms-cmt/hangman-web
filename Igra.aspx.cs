@@ -44,17 +44,6 @@ namespace hangmanweb
 				{
 				}
 			}
-			
-			if (hidIme.Text != "")
-			{
-				ClientScript.RegisterStartupScript(GetType (), "alert", "alert(\'" + hidIme.Text + "\');", true);
-				try
-				{
-					client.SnimiRekord (hidIme.Text);
-				} catch (Exception ex)
-				{
-				}
-			}
 		}
 
 		protected void SlovoClick (object sender, EventArgs e)
@@ -107,6 +96,19 @@ namespace hangmanweb
 					}
 				}
 			} catch(Exception ex)
+			{
+			}
+		}
+		
+		protected void SnimiRekord (object sender, EventArgs e)
+		{
+			HangmanClient client = (HangmanClient)Session ["client"];
+			string ime = ((TextBox)sender).Text;
+			
+			try
+			{
+				client.SnimiRekord (ime);
+			} catch (Exception ex)
 			{
 			}
 		}

@@ -10,14 +10,14 @@
 			if(polje != null && ime != null)
 			{
 				polje.value = ime;
-				document.forms(0).submit();
+				__doPostBack('<%=hidIme.UniqueID%>', '');
 			}
 		}
 	</script>
 
 	<form id="frmIgra" runat="server">
 	
-		<asp:TextBox id="hidIme" runat="server" value="" AutoPostBack="true" />
+		<asp:TextBox id="hidIme" runat="server" value="" AutoPostBack="true" OnTextChanged="SnimiRekord" style="display: none" />
 		
 		<section class="cd-section cd-placeholder-1">
 			<div class="cd-container">
