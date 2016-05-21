@@ -32,7 +32,7 @@ namespace hangmanweb
 					// Resavanje praznih mesta
 					for (i = 0, j = 1; i < ukupanBrojSlova; i++)
 					{
-						if (j < args.Length && args[j] == i)
+						if (j < args.Length && args [j] == i)
 						{
 							j++;
 							lblGlavna.Text += " ";
@@ -40,7 +40,17 @@ namespace hangmanweb
 						}
 						lblGlavna.Text += "_";
 					}
-				} catch(Exception ex)
+				} catch (Exception ex)
+				{
+				}
+			}
+			
+			if (hidIme.Value != "")
+			{
+				try
+				{
+					client.SnimiRekord (hidIme.Value);
+				} catch (Exception)
 				{
 				}
 			}

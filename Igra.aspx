@@ -2,19 +2,19 @@
 
 <asp:Content ContentPlaceHolderID="cphMain" runat="server">
 
-	<script>
+	<script type="text/javascript">
 		function unosImena ()
 		{
 			var ime = prompt("Snimanje rekorda:", "");
 			if(ime != null)
 			{
-				document.getElementById(""<%=hidIme.ClientID%>"").value = ime;
+				document.getElementById("<%=hidIme.ClientID%>").value = ime;
 			}
 		}
 	</script>
 
 	<form id="frmIgra" runat="server">
-		<input type="hidden" id="hidIme" runat="server" />
+		<input type="hidden" id="hidIme" runat="server" value="" />
 
 		<section class="cd-section cd-placeholder-1">
 			<div class="cd-container">
