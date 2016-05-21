@@ -19,6 +19,8 @@
 		<header class="cd-section">
 			<div class="cd-container">
 				<h1>HANGMAN</h1>
+				<asp:ContentPlaceHolder id="cphHeader" runat="server">
+				</asp:ContentPlaceHolder>
 			</div> <!-- cd-container -->
 		</header>
 

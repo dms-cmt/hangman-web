@@ -1,5 +1,11 @@
 ﻿<%@ Page Language="C#" Inherits="hangmanweb.Igra" MasterPageFile="~/Main.master" %>
 
+<asp:Content ContentPlaceHolderID="cphHeader" runat="server">
+	<div align="left">	
+	<p stype="align: left;">Test</p>
+	</div>
+</asp:Content>
+
 <asp:Content ContentPlaceHolderID="cphMain" runat="server">
 	
 	<script type="text/javascript">
