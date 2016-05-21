@@ -1,5 +1,11 @@
 ﻿<%@ Page Language="C#" Inherits="hangmanweb.Rekordi" MasterPageFile="~/Main.master" %>
 
+<asp:Content ContentPlaceHolderID="cphHeader" runat="server">	
+	<div align="left">
+		<p style="aligh: left;"><a href="Default.aspx">Nazad</a></p>
+	</div>	
+</asp:Content>
+
 <asp:Content ContentPlaceHolderID="cphMain" runat="server">
 	<form runat="server">
 
