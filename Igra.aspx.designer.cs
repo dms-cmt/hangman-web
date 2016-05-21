@@ -15,7 +15,7 @@ namespace hangmanweb {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm frmIgra;
 		
-		protected System.Web.UI.HtmlControls.HtmlInputHidden hidIme;
+		protected System.Web.UI.WebControls.TextBox hidIme;
 		
 		protected System.Web.UI.WebControls.Image imgZivot1;
 		

@@ -1,21 +1,24 @@
 ﻿<%@ Page Language="C#" Inherits="hangmanweb.Igra" MasterPageFile="~/Main.master" %>
 
 <asp:Content ContentPlaceHolderID="cphMain" runat="server">
-
+	
 	<script type="text/javascript">
 		function unosImena ()
 		{
-			var ime = prompt("Snimanje rekorda:", "");
-			if(ime != null)
+			var polje = document.getElementById('<%=hidIme.ClientID%>');
+			var ime = prompt('Snimanje rekorda:', '');
+			if(polje != null && ime != null)
 			{
-				document.getElementById("<%=hidIme.ClientID%>").value = ime;
+				polje.value = ime;
+				document.forms(0).submit();
 			}
 		}
 	</script>
 
 	<form id="frmIgra" runat="server">
-		<input type="hidden" id="hidIme" runat="server" value="" />
-
+	
+		<asp:TextBox id="hidIme" runat="server" value="" AutoPostBack="true" />
+		
 		<section class="cd-section cd-placeholder-1">
 			<div class="cd-container">
 				<table>

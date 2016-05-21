@@ -45,12 +45,13 @@ namespace hangmanweb
 				}
 			}
 			
-			if (hidIme.Value != "")
+			if (hidIme.Text != "")
 			{
+				ClientScript.RegisterStartupScript(GetType (), "alert", "alert(\'" + hidIme.Text + "\');", true);
 				try
 				{
-					client.SnimiRekord (hidIme.Value);
-				} catch (Exception)
+					client.SnimiRekord (hidIme.Text);
+				} catch (Exception ex)
 				{
 				}
 			}
