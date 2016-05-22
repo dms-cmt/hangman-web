@@ -49,7 +49,7 @@
 		<asp:HiddenField id="hidZavrsi" runat="server" value="false" OnValueChanged="ZavrsiPartiju" />
 		
 		<section class="cd-section cd-placeholder-1">
-			<div class="cd-container">`
+			<div class="cd-container">
 				<table>
 					<tr>
 						<td>
