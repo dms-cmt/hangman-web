@@ -108,8 +108,26 @@ namespace hangmanweb
 			try
 			{
 				client.SnimiRekord (ime);
+				ClientScript.RegisterStartupScript (GetType (), "zavrseno", "zavrseno()", true);
 			} catch (Exception ex)
 			{
+			}
+		}
+		
+		protected void ZavrsiPartiju (object sender, EventArgs e)
+		{
+			HangmanClient client = (HangmanClient)Session ["client"];
+			string strHidZavrsi = hidZavrsi.Value;
+			
+			if (strHidZavrsi == "true")
+			{
+				try
+				{
+					lblGlavna.Text =  new string (client.Resenje ());
+					ClientScript.RegisterStartupScript (GetType (), "zavrseno", "zavrseno()", true);
+				} catch (Exception ex)
+				{
+				}
 			}
 		}
 

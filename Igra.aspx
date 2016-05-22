@@ -2,7 +2,9 @@
 
 <asp:Content ContentPlaceHolderID="cphHeader" runat="server">
 	<div align="left">	
-	<p stype="align: left;">Test</p>
+	<p stype="align: left;">
+		<a id="izlaz" onclick="zavrsi()" href="#">Zavrsi</a>
+	</p>
 	</div>
 </asp:Content>
 
@@ -19,14 +21,35 @@
 				__doPostBack('<%=hidIme.UniqueID%>', '');
 			}
 		}
+		function zavrsi ()
+		{
+			var polje = document.getElementById('<%=hidZavrsi.ClientID%>');
+			var rez = confirm('Da li ste sigurni da zelite da zavrsite parttiju?');
+			if(polje != null)
+			{
+				polje.value = rez;
+				__doPostBack('<%=hidZavrsi.UniqueID%>', '');
+			}
+		}
+		function zavrseno ()
+		{
+			var polje = document.getElementById('izlaz');
+			if(polje != null)
+			{
+				polje.text = "Nazad";
+				polje.href = "/Default.aspx";
+				polje.onclick = function(event){}
+			}
+		}
 	</script>
 
 	<form id="frmIgra" runat="server">
 	
 		<asp:TextBox id="hidIme" runat="server" value="" AutoPostBack="true" OnTextChanged="SnimiRekord" style="display: none" />
+		<asp:HiddenField id="hidZavrsi" runat="server" value="false" OnValueChanged="ZavrsiPartiju" />
 		
 		<section class="cd-section cd-placeholder-1">
-			<div class="cd-container">
+			<div class="cd-container">`
 				<table>
 					<tr>
 						<td>

@@ -17,6 +17,8 @@ namespace hangmanweb {
 		
 		protected System.Web.UI.WebControls.TextBox hidIme;
 		
+		protected System.Web.UI.WebControls.HiddenField hidZavrsi;
+		
 		protected System.Web.UI.WebControls.Image imgZivot1;
 		
 		protected System.Web.UI.WebControls.Image imgZivot3;
