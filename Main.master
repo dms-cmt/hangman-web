@@ -37,8 +37,26 @@
 
 		<div class="cd-bio-content">
 			<h1>Milos Zivlak</h1>
-			<p>Mlad i vredan decko strucan u polju programiranja.</p>
-			<p>Kao sto mozete videti na slici, najvise uziva u cackanju retro racunara umesto da radi domaci iz matematike.</p>
+			<p>
+				<table>
+					<tr>
+						<td>email:</td>
+						<td><a href="mailto:zivlakmilos@gmail.com">zivlakmilos@gmail.com</a></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><a href="mailto:zivlakmilos@sbb.rs">zivlakmilos@sbb.rs</a></td>
+					</tr>
+					<tr>
+						<td>sajt:</td>
+						<td><a href="http://zivlakmilos.ddns.net" target="_blank">zivlakmilos.ddns.net</a></td>
+					</tr>
+					<tr>
+						<td>github:</td>
+						<td><a href="http://github.com/zivlakmilos" target="_blank">github.com/zivlakmilos</a></td>
+					</tr>
+				</table>
+			</p>
 		</div> <!-- cd-bio-content -->
 	</div> <!-- cd-member-bio -->
 
@@ -49,20 +67,17 @@
 
 		<div class="cd-bio-content">
 			<h1>Djordje GLuvajic</h1>
-			<p>Bla bla</p>
-			<p>bla bla</p>
 		</div> <!-- cd-bio-content -->
 	</div> <!-- cd-member-bio -->
 
 	<div class="cd-member-bio member-3">
 		<div class="cd-member-bio-pict">
-			<img src="img/member-bio-img-3.jpg" alt="Member Bio image">
+			<img src="img/member-bio-img-3.png" alt="Member Bio image">
 		</div> <!-- cd-member-bio-pict -->
 
 		<div class="cd-bio-content">
-			<h1>bla</h1>
-			<p>bla bla</p>
-			<p>bla bla bla</p>
+			<h1>Hangman</h1>
+			<p>Igra Hangman je uradjena kao projekat za fondaciju "Centar za mlade talente"</p>
 		</div> <!-- cd-bio-content -->
 	</div> <!-- cd-member-bio -->
 	<a href="#0" class="cd-member-bio-close">Close</a> <!-- close the author bio section -->

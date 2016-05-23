@@ -30,7 +30,7 @@
 					<li>
 						<a href="#0" data-type="member-1">
 							<figure>
-								<img src="img/team-member-1.jpg" alt="Team member 1">
+								<img src="img/team-member-1.png" alt="Team member 1">
 								<div class="cd-img-overlay"><span>O njemu</span></div>
 							</figure>
 								<div class="cd-member-info">
@@ -42,7 +42,7 @@
 					<li>
 						<a href="#0" data-type="member-2">
 							<figure>
-								<img src="img/team-member-1.jpg" alt="Team member 1">
+								<img src="img/team-member-2.png" alt="Team member 1">
 								<div class="cd-img-overlay"><span>O njemu</span></div>
 							</figure>
 								<div class="cd-member-info">
@@ -53,11 +53,11 @@
 						<li>
 						<a href="#0" data-type="member-3">
 							<figure>
-								<img src="img/team-member-1.jpg" alt="Team member 1">
+								<img src="img/team-member-3.png" alt="Team member 1">
 								<div class="cd-img-overlay"><span>O njemu</span></div>
 							</figure>
 								<div class="cd-member-info">
-								Bvze <span>Web Design</span>
+								Hangman <span>Projekat</span>
 							</div> <!-- cd-member-info -->
 						</a>
 					</li>
