@@ -27,26 +27,29 @@
 						<asp:ListItem Text="Po vremenu" Value="1"></asp:ListItem>
 						<asp:ListItem Text="Po broju pogresnih slova" Value="2"></asp:ListItem>
 					</asp:DropDownList>
-					<table id="tblRekordi" class="tblRekordi">
-						<tr id="trHeader" class="trHeader">
-							<td><b>Ime:</b></td>
-							<td><b>Vreme:</b></td>
-							<td><b>Broj pogresnih slova:</b></td>
-						</tr>
-						<asp:Repeater id="repRekordi" runat="server">
-							<ItemTemplate>
-								<tr id="trContent" class="tcContent">
-									<td><asp:Label id="lblIme" runat="server"><%# Eval("ImeKorisnika") %></asp:Label></td>
-									<td><asp:Label id="lblVreme" runat="server"><%# Eval("BrojSekundi") %></asp:Label></td>
-									<td><asp:Label id="lblBrojSlova" runat="server"><%# Eval("BrojPogresnihSlova") %></asp:Label></td>
-								</tr>
-							</ItemTemplate>
-						</asp:Repeater>
-					</table>
+					<br /><br />
+					<div align="center">
+						<table id="tblRekordi">
+							<tr id="trHeader">
+								<td><b>Ime:</b></td>
+								<td><b>Vreme:</b></td>
+								<td><b>Broj pogresnih slova:</b></td>
+							</tr>
+							<asp:Repeater id="repRekordi" runat="server">
+								<ItemTemplate>
+									<tr id="trContent" class="tcContent">
+										<td><asp:Label id="lblIme" runat="server"><%# Eval("ImeKorisnika") %></asp:Label></td>
+										<td><asp:Label id="lblVreme" runat="server"><%# Eval("BrojSekundi") %></asp:Label></td>
+										<td><asp:Label id="lblBrojSlova" runat="server"><%# Eval("BrojPogresnihSlova") %></asp:Label></td>
+									</tr>
+								</ItemTemplate>
+							</asp:Repeater>
+						</table>
+					</div>
 				</p>
 			</div> <!-- cd-container -->
-
 		</section>
+		
 	</form>
 </asp:Content>
 	

@@ -50,6 +50,7 @@
 		
 		<section class="cd-section cd-placeholder-1">
 			<div class="cd-container">
+				<div align="center">
 				<table>
 					<tr>
 						<td>
@@ -62,26 +63,27 @@
 					</tr>
 					<tr>
 						<td>
-							<asp:Image id="imgZivot3" runat="server" ImageUrl="img/rukal.png" Visible="false" />
+							<asp:Image id="imgZivot3" runat="server" ImageUrl="img/leva_ruka.png" Visible="false" />
 						</td>
 						<td>
 							<asp:Image id="imgZivot2" runat="server" ImageUrl="img/telo.png" Visible="false" />
 						</td>
 						<td>
-							<asp:Image id="imgZivot4" runat="server" ImageUrl="img/rukad.png" Visible="false" />
+							<asp:Image id="imgZivot4" runat="server" ImageUrl="img/desna_ruka.png" Visible="false" />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<asp:Image id="imgZivot5" runat="server" ImageUrl="img/nogal.png" Visible="false" />
+							<asp:Image id="imgZivot5" runat="server" ImageUrl="img/leva_noga.png" Visible="false" />
 						</td>
 						<td>
 						</td>
 						<td>
-							<asp:Image id="imgZivot6" runat="server" ImageUrl="img/nogad.png" Visible="false" />
+							<asp:Image id="imgZivot6" runat="server" ImageUrl="img/desna_noga.png" Visible="false" />
 						</td>
 					</tr>
 				</table>
+				</div>
 
 				<h2><asp:Label id="lblGlavna" runat="server" Style="letter-spacing: 5px;" /></h2>
 				<p>

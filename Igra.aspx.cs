@@ -12,14 +12,17 @@ namespace hangmanweb
 	public partial class Igra : System.Web.UI.Page
 	{
 		private int ukupanBrojSlova;
+		private List<string> iskoriscenaSlova;
+		
+		protected void Page_Init (object sender, EventArgs e)
+		{
+			iskoriscenaSlova = new List<string> ();
+		}
 
 		protected void Page_Load (object sender, EventArgs e)
 		{
-			int i, j;
 			int[] args;
 			HangmanClient client = (HangmanClient)Session ["client"];
-
-			PostaviKontrole ();
 
 			if (!IsPostBack)
 			{
@@ -30,7 +33,7 @@ namespace hangmanweb
 					lblGlavna.Text = "";
 
 					// Resavanje praznih mesta
-					for (i = 0, j = 1; i < ukupanBrojSlova; i++)
+					for (int i = 0, j = 1; i < ukupanBrojSlova; i++)
 					{
 						if (j < args.Length && args [j] == i)
 						{
@@ -44,6 +47,8 @@ namespace hangmanweb
 				{
 				}
 			}
+			
+			PostaviKontrole ();
 		}
 
 		protected void SlovoClick (object sender, EventArgs e)
@@ -61,6 +66,8 @@ namespace hangmanweb
 			{
 				return;
 			}
+			
+			iskoriscenaSlova.Add (zaProveru);
 
 			// Prikaz trenutnog stanja teksta koji se pogadja
 			lblGlavna.Text = "";
@@ -94,10 +101,13 @@ namespace hangmanweb
 					{
 						lblGlavna.Text += c;
 					}
+					ClientScript.RegisterStartupScript (GetType (), "zavrseno", "zavrseno()", true);
 				}
 			} catch(Exception ex)
 			{
 			}
+			
+			PrikaziZivot ();
 		}
 		
 		protected void SnimiRekord (object sender, EventArgs e)
@@ -133,18 +143,21 @@ namespace hangmanweb
 
 		private void PostaviKontrole ()
 		{
-			int i;
-
 			string[] slova = {
 				"A", "B", "C", "Č", "Ć", "D", "Dž", "Đ", "E", "F",
 				"G", "H", "I", "J", "K", "L", "Lj", "M", "N", "Nj",
 				"O", "P", "R", "S", "Š", "T", "U", "V", "Z", "Ž"
 			};
-			for (i = 0; i < slova.Length; i++)
+			for (int i = 0, j = 0; i < slova.Length; i++)
 			{
 				Button btnSlovo = new Button ();
 				btnSlovo.ID = i.ToString ();
 				btnSlovo.Text = slova [i];
+				if (j < iskoriscenaSlova.Count && slova [i] == iskoriscenaSlova [j])
+				{
+					btnSlovo.Enabled = false;
+					j++;
+				}
 				btnSlovo.Click += SlovoClick;
 				panelDugmad.Controls.Add (btnSlovo);
 				if ((i + 1) % 10 == 0)
