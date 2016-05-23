@@ -57,7 +57,7 @@
 								<div class="cd-img-overlay"><span>O njemu</span></div>
 							</figure>
 								<div class="cd-member-info">
-								Bvze <span>Web Design</span>
+								Hangman <span>Projekat</span>
 							</div> <!-- cd-member-info -->
 						</a>
 					</li>
