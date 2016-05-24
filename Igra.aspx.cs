@@ -123,6 +123,7 @@ namespace hangmanweb
 				ShowMessage ("Nije moguca komunikacija sa servisom!");
 			}
 			
+			PostaviKontrole ();
 			PrikaziZivot ();
 		}
 		
@@ -173,6 +174,8 @@ namespace hangmanweb
 				"G", "H", "I", "J", "K", "L", "Lj", "M", "N", "Nj",
 				"O", "P", "R", "S", "Š", "T", "U", "V", "Z", "Ž"
 			};
+			
+			panelDugmad.Controls.Clear ();
 			for (int i = 0, j = 0; i < slova.Length; i++)
 			{
 				Button btnSlovo = new Button ();
