@@ -13,18 +13,22 @@ namespace hangmanweb
 	
 	public partial class Igra : System.Web.UI.Page
 	{
-		private int ukupanBrojSlova;
-		private List<string> iskoriscenaSlova;
 		
 		protected void Page_Init (object sender, EventArgs e)
 		{
-			iskoriscenaSlova = new List<string> ();
+			List<string> iskoriscenaSlova;
+			if(Session ["iskoriscenaSlova"] != null)
+				iskoriscenaSlova = Session ["iskoriscenaSlova"] as List<string>;
+			else
+				iskoriscenaSlova = new List<string> ();
+			Session ["iskoriscenaSlova"] = iskoriscenaSlova;
 		}
 
 		protected void Page_Load (object sender, EventArgs e)
 		{
 			int[] args;
 			HangmanClient client = (HangmanClient)Session ["client"];
+			int ukupanBrojSlova;
 
 			if (!IsPostBack)
 			{
@@ -53,32 +57,29 @@ namespace hangmanweb
 					ShowMessage ("Nije moguca komunikacija sa servisom!");
 				}
 			}
-			
 			PostaviKontrole ();
 		}
 
 		protected void SlovoClick (object sender, EventArgs e)
 		{
+			List<string> iskoriscenaSlova = (List<string>)Session ["iskoriscenaSlova"];
 			string zaProveru = ((Button)sender).Text;
 			char[] chGlavna = lblGlavna.Text.ToCharArray ();
 			List<int> indeksi;
 			HangmanClient client = (HangmanClient)Session ["client"];
 			EStatusIgre status;
+			
+			iskoriscenaSlova.Add (zaProveru);
+			Session ["iskoriscenaSlova"] = iskoriscenaSlova;
 
 			try
 			{
 				indeksi = client.Provera (zaProveru.ToCharArray ());
-			} catch (FaultException<ServiceFault> ex)
-			{
-				ShowMessage (ex.Detail.ErrorMessage);
-				return;
 			} catch (Exception ex)
 			{
 				ShowMessage ("Nije omguca komunikacija sa servisom!");
 				return;
 			}
-			
-			iskoriscenaSlova.Add (zaProveru);
 
 			// Prikaz trenutnog stanja teksta koji se pogadja
 			lblGlavna.Text = "";
@@ -166,6 +167,7 @@ namespace hangmanweb
 
 		private void PostaviKontrole ()
 		{
+			List<string> iskoriscenaSlova = Session ["iskoriscenaSlova"] as List<string>;
 			string[] slova = {
 				"A", "B", "C", "Č", "Ć", "D", "Dž", "Đ", "E", "F",
 				"G", "H", "I", "J", "K", "L", "Lj", "M", "N", "Nj",
@@ -176,12 +178,10 @@ namespace hangmanweb
 				Button btnSlovo = new Button ();
 				btnSlovo.ID = i.ToString ();
 				btnSlovo.Text = slova [i];
-				if (j < iskoriscenaSlova.Count && slova [i] == iskoriscenaSlova [j])
-				{
-					btnSlovo.Enabled = false;
-					j++;
-				}
 				btnSlovo.Click += SlovoClick;
+				foreach (string c in iskoriscenaSlova)
+					if (slova[i] == c)
+						btnSlovo.Enabled = false;
 				panelDugmad.Controls.Add (btnSlovo);
 				if ((i + 1) % 10 == 0)
 					panelDugmad.Controls.Add (new LiteralControl ("<br />"));
