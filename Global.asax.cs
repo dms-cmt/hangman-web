@@ -38,6 +38,8 @@ namespace hangmanweb
 		
 		protected virtual void Session_End (Object sender, EventArgs e)
 		{
+			HangmanClient client = (HangmanClient)Session ["client"];
+			client.Close ();
 		}
 		
 		protected virtual void Application_End (Object sender, EventArgs e)
