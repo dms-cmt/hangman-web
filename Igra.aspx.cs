@@ -3,8 +3,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections.Generic;
+using System.ServiceModel;
 
 using HangmanService;
+using Hangman;
 
 namespace hangmanweb
 {
@@ -43,8 +45,12 @@ namespace hangmanweb
 						}
 						lblGlavna.Text += "_";
 					}
+				} catch (FaultException<ServiceFault> ex)
+				{
+					ShowMessage (ex.Detail.ErrorMessage);
 				} catch (Exception ex)
 				{
+					ShowMessage ("Nije moguca komunikacija sa servisom!");
 				}
 			}
 			
@@ -62,8 +68,13 @@ namespace hangmanweb
 			try
 			{
 				indeksi = client.Provera (zaProveru.ToCharArray ());
+			} catch (FaultException<ServiceFault> ex)
+			{
+				ShowMessage (ex.Detail.ErrorMessage);
+				return;
 			} catch (Exception ex)
 			{
+				ShowMessage ("Nije omguca komunikacija sa servisom!");
 				return;
 			}
 			
@@ -103,8 +114,12 @@ namespace hangmanweb
 					}
 					ClientScript.RegisterStartupScript (GetType (), "zavrseno", "zavrseno()", true);
 				}
+			} catch (FaultException<ServiceFault> ex)
+			{
+				ShowMessage (ex.Detail.ErrorMessage);
 			} catch(Exception ex)
 			{
+				ShowMessage ("Nije moguca komunikacija sa servisom!");
 			}
 			
 			PrikaziZivot ();
@@ -119,8 +134,12 @@ namespace hangmanweb
 			{
 				client.SnimiRekord (ime);
 				ClientScript.RegisterStartupScript (GetType (), "zavrseno", "zavrseno()", true);
+			} catch (FaultException<ServiceFault> ex)
+			{
+				ShowMessage (ex.Detail.ErrorMessage);
 			} catch (Exception ex)
 			{
+				ShowMessage ("Nije moguca komunikacija sa servisom!");
 			}
 		}
 		
@@ -135,8 +154,12 @@ namespace hangmanweb
 				{
 					lblGlavna.Text =  new string (client.Resenje ());
 					ClientScript.RegisterStartupScript (GetType (), "zavrseno", "zavrseno()", true);
+				} catch (FaultException<ServiceFault> ex)
+				{
+					ShowMessage (ex.Detail.ErrorMessage);
 				} catch (Exception ex)
 				{
+					ShowMessage ("Nije moguca komunikacija sa servisom!");
 				}
 			}
 		}
@@ -174,8 +197,13 @@ namespace hangmanweb
 			try
 			{
 				brojPokusaja = client.BrojPokusaja ();
-			} catch(Exception)
+			} catch (FaultException<ServiceFault> ex)
 			{
+				ShowMessage (ex.Detail.ErrorMessage);
+				return;
+			} catch(Exception ex)
+			{
+				ShowMessage ("Nije moguca komunikacija sa servisom!");
 				return;
 			}
 
@@ -184,6 +212,12 @@ namespace hangmanweb
 				img = (Image)frmIgra.FindControl ("imgZivot" + brojPokusaja.ToString ());
 				img.Visible = true;
 			}
+		}
+		
+		private void ShowMessage (string message)
+		{
+			ClientScript.RegisterStartupScript (GetType (), "alert",
+			                                    "alert(\"" + message + "\")", true);
 		}
 	}
 }
