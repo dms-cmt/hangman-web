@@ -53,12 +53,8 @@
 				<div align="center">
 				<table>
 					<tr>
-						<td>
-						</td>
-						<td>
-							<asp:Image id="imgZivot1" runat="server" ImageUrl="img/glava.png" Visible="false" />
-						</td>
-						<td>
+						<td colspan="3" align="center">
+							<asp:Image id="imgZivot1" runat="server" ImageUrl="img/glava.png" Visible="false" Width="50" Height="50" />
 						</td>
 					</tr>
 					<tr>
